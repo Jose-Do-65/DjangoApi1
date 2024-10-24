@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from api.home.value_const import LOGING_URL
 
-#Constantes valores
-LOGING_URL = "/login"
 
 #crceate your view here.
 @login_required(login_url=LOGING_URL)

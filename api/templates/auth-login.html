@@ -22,11 +22,7 @@
                     <div class="auth-logo">
                         <a href="{% url 'home'%}"><img src="{% static 'images/logo/logo.png'%}" alt="Logo"></a>
                     </div>
-                    {% if messages %}
-                    {% for messages in messages %}
-                    <div id="error-message">{{ message }}</div>
-                    {% endfor %}
-                    {% endif %}
+                  
                     <h1 class="auth-title">Log in.</h1>
                     <p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>
 
@@ -65,23 +61,20 @@
             </div>
             <div class="col-lg-7 d-none d-lg-block">
                 <div id="auth-right">
-
+                {% if messages %}
+                {% for messages in messages %}
+                <div id="error-message" class="alert alert-danger">
+                    <h4 class="alert-heading">credencial invalida</h4>
+                </div>
+                {% endfor %}
+                {% endif %}
                 </div>
             </div>
         </div>
 
     </div>
+
+
+
 </body>
-
-
-<script>{
-        const errorMessage = document.getElementById('error-message');
-
-        if (errorMessage) {
-            console.log(errorMessage.textContent); //muetra el mensaje de error en consola
-            //puede utilizar este mensaje para mostrar una alerta o notificacion.
-        }
-
-</script>
-
 </html>
